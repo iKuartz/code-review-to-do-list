@@ -3,14 +3,15 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
+  devtool: 'eval-source-map',
   entry: './src/index.js',
   devServer: {
     static: './dist',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'index_bundle.js',
-    publicPath: '/to-do-list/',
+    filename: './main.js',
+    publicPath: '',
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/template.html' })],
   module: {
